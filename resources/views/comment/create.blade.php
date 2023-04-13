@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-                <div class="display-5">Erstelle einen Kommentar zu "<span>{{ $post->title }}</span>" von {{ $post->user->name }}</div>
+            <div class="display-5">Erstelle einen Kommentar zu "<span>{{ $post->title }}</span>"
+                von {{ $post->user->name }}</div>
             <div class="card">
                 <div class="card-body">
 

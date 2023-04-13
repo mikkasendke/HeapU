@@ -17,7 +17,8 @@
                         <a class="text-decoration-none text-dark " href="/posts/{{ $post->id }}">
                             <h4>{{ $post->title }}</h4></a>
 
-                        <h5>von <a class="text-dark text-decoration-none" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a></h5>
+                        <h5>von <a class="text-dark text-decoration-none"
+                                   href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a></h5>
                     </div>
                 @endforeach
             </div>

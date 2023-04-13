@@ -16,7 +16,9 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import KarmaWidget from "./components/KarmaWidget.vue";
 app.component('example-component', ExampleComponent);
+app.component('KarmaWidget', KarmaWidget);
 
 /**
  * The following block of code may be used to automatically register your

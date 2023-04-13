@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('startpage');
-});
-Route::get('/info', function () {
-    return view('info');
-});
+Route::view('/', 'startpage')->name('startpage');
+Route::view('/info', 'info')->name('info');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource("posts", "App\Http\Controllers\PostController");
-Route::get("/comments/create/{post_id}", "App\Http\Controllers\CommentController@create");
-Route::post('/posts/{post_id}/comments', [\App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
+Route::resource('posts', PostController::class);
 
-Route::get("/user/{user_id}", "App\Http\Controllers\UserController@show");
+Route::get('/comments/create/{post}', [CommentController::class, 'create'])->name('comments.create');
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+
+Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
-use App\Http\Requests\StorepostRequest;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatepostRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +28,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepostRequest $request)
+    public function store(StorePostRequest $request)
     {
     }
 
@@ -40,6 +40,7 @@ class UserController extends Controller
         $user = User::findOrFail($user_id);
         return view("auth.show", ["user" => $user]);
     }
+
     /**
      * Show the form for editing the specified resource.
      */

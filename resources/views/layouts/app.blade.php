@@ -89,7 +89,7 @@
         <main class="py-4 min-vh-100">
             @yield('content')
         </main>
-        <footer >
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-12">

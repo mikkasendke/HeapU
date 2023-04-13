@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
-use App\Http\Requests\StorepostRequest;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatepostRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +13,7 @@ class PostController extends Controller
     {
         $this->middleware("auth")->only(["create", "store"]);
     }
+
     /**
      * Display a listing of the resource.
      */
@@ -33,7 +34,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepostRequest $request)
+    public function store(StorePostRequest $request)
     {
         $post = new post([
             "title" => $request["title"],
@@ -51,6 +52,7 @@ class PostController extends Controller
     {
         return view("post.show", ["post" => $post]);
     }
+
     /**
      * Show the form for editing the specified resource.
      */

@@ -24,9 +24,12 @@
                 @foreach($user->comments as $comment)
                     <div class="card mb-2 p-3">
                         <a class="text-decoration-none text-dark " href="/posts/{{ $comment->post->id }}">
-                            <h4>{{ $comment->content }}</h4> </a>
+                            <h4>{{ $comment->content }}</h4></a>
 
-                        <h5>zu  <a class="text-dark text-decoration-none" href="/posts/{{ $comment->post->id }}">{{ $comment->post->title }}</a> von <a class="text-dark text-decoration-none" href="/user/{{ $comment->post->user->id }}">{{ $comment->post->user->name }}</a></h5>
+                        <h5>zu <a class="text-dark text-decoration-none"
+                                  href="/posts/{{ $comment->post->id }}">{{ $comment->post->title }}</a> von <a
+                                class="text-dark text-decoration-none"
+                                href="/user/{{ $comment->post->user->id }}">{{ $comment->post->user->name }}</a></h5>
                     </div>
                 @endforeach
             </div>
